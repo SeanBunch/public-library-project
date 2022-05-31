@@ -1,4 +1,3 @@
-console.log("hey")
 function getTotalBooksCount(books) {}
 
 function getTotalAccountsCount(accounts) {}
