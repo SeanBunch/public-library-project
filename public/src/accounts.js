@@ -27,8 +27,21 @@ function sortAccountsByLastName(accounts) {
   // });
 };
 // console.log(sortAccountsByLastName(accounts));
-
-function getTotalNumberOfBorrows(account, books) { }
+// console.log(books[0].borrows[0].id);
+console.log(accounts[0].id);
+function getTotalNumberOfBorrows(account, books) {
+  let count = 0;
+  for (let i = 0; i < books.length; i++) {
+    for (let j = 0; j < books[i].borrows.length; j++) {
+      // console.log(books[i].borrows[j].id);
+      if(account.id === books[i].borrows[j].id) {
+        count += 1
+      }
+    }
+  }
+  console.log(count)
+};
+console.log(getTotalNumberOfBorrows(account, books));
 
 function getBooksPossessedByAccount(account, books, authors) { }
 
