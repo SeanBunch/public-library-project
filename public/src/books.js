@@ -2,17 +2,17 @@
 function findAuthorById(authors, id) {
   // let result = authors.find((author) => author.id === id)
   let result = null;
-    authors.reduce((foundAuthor, author) => {
-      // console.log(foundAuthor)
-      // console.log(author[id]);
-      // console.log(id);
-      // console.log(author.id);
-      if (author.id === id) {
-        result = author;
-      };
-      // console.log(author);
-      // return foundAuthor;
-    }, null);
+  authors.reduce((foundAuthor, author) => {
+    // console.log(foundAuthor)
+    // console.log(author[id]);
+    // console.log(id);
+    // console.log(author.id);
+    if (author.id === id) {
+      result = author;
+    };
+    // console.log(author);
+    // return foundAuthor;
+  }, null);
   // console.log(result);
   return result;
 };
@@ -28,7 +28,21 @@ function findBookById(books, id) {
 // console.log(findBookById(books, id));
 
 
-function partitionBooksByBorrowedStatus(books) { }
+function partitionBooksByBorrowedStatus(books) {
+  const returnedFalse = books.filter(book => !book.borrows[0].returned);
+  // console.log(books[2].borrows[0]);
+  const returnedTrue = books.filter(book => book.borrows[0].returned);
+
+  const result = [returnedFalse, returnedTrue]
+  // console.log(returnedFalse);
+  // console.log(returnedTrue);
+  // console.log(result);
+
+  return result;
+};
+// console.log(partitionBooksByBorrowedStatus(books));
+
+
 
 function getBorrowersForBook(book, accounts) { }
 
