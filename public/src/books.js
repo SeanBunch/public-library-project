@@ -42,9 +42,32 @@ function partitionBooksByBorrowedStatus(books) {
 };
 // console.log(partitionBooksByBorrowedStatus(books));
 
+// const book = books[0];
+function getBorrowersForBook(book, accounts) {
+  // console.log(book.borrows);
+  let result = [];
+  for (let i = 0; i < book.borrows.length; i++) {
+    for (let j = 0; j < accounts.length; j++) {
+      if (accounts[j].id === book.borrows[i].id) {
+        result.push(accounts[j]);
+
+      };
+      // console.log(accounts[j].id);
+    };
+    // console.log(book.borrows[i].id, book.borrows[i].returned);
+  };
+  // console.log(result);
+  for (let i = 0; i < result.length; i++) {
+    result[i]["returned"] = book.borrows[i].returned
+  };
+  // console.log(accounts[1].id.includes(book.borrows));
+  return result.slice(0, 10);
+};
+// console.log(getBorrowersForBook(book, accounts));
 
 
-function getBorrowersForBook(book, accounts) { }
+
+
 
 module.exports = {
   findAuthorById,
