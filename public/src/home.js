@@ -1,14 +1,28 @@
-function getTotalBooksCount(books) {}
+function getTotalBooksCount(books) {
+  let count = 0;
+  //  for (let i = 0; i < books.length; i++){
+  //    count += 1
+  //   };
+  for (let book in books) {
+    // console.log(book);
+    count += 1;
+  };
+  // console.log(count);
+  return count;
+};
 
-function getTotalAccountsCount(accounts) {}
+// console.log(getTotalBooksCount(books));
 
-function getBooksBorrowedCount(books) {}
 
-function getMostCommonGenres(books) {}
+function getTotalAccountsCount(accounts) { }
 
-function getMostPopularBooks(books) {}
+function getBooksBorrowedCount(books) { }
 
-function getMostPopularAuthors(books, authors) {}
+function getMostCommonGenres(books) { }
+
+function getMostPopularBooks(books) { }
+
+function getMostPopularAuthors(books, authors) { }
 
 module.exports = {
   getTotalBooksCount,
