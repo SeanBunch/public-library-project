@@ -23,7 +23,18 @@ function getTotalAccountsCount(accounts) {
 }
 // console.log(getTotalAccountsCount(accounts));
 
-function getBooksBorrowedCount(books) { }
+function getBooksBorrowedCount(books) {
+  let count = 0;
+  for (let i = 0; i < books.length; i++) {
+    (books[i].borrows[0].returned === false) ? count += 1 : count += 0;
+    // console.log(books[i].borrows[0].returned)
+  };
+  // isReturned ? count += 1 : count += 0;
+  // console.log(count);
+  return count;
+};
+// console.log(getBooksBorrowedCount(books));
+
 
 function getMostCommonGenres(books) { }
 
