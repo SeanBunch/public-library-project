@@ -10,11 +10,18 @@ function getTotalBooksCount(books) {
   // console.log(count);
   return count;
 };
-
 // console.log(getTotalBooksCount(books));
 
 
-function getTotalAccountsCount(accounts) { }
+function getTotalAccountsCount(accounts) {
+  let count = 0;
+  for (let account in accounts) {
+    count += 1
+  };
+  return count;
+  // console.log(count);
+}
+// console.log(getTotalAccountsCount(accounts));
 
 function getBooksBorrowedCount(books) { }
 
