@@ -11,7 +11,7 @@ function findAccountById(accounts, id) {
 // console.log(findAccountById(accounts, id));
 // console.log(accounts[0].name.last.toUpperCase());
 function sortAccountsByLastName(accounts) {
-  return accounts.sort((a, b) => (a.name.last > b.name.last) ? 1 : -1);
+  return accounts.sort((a, b) => (a.name.last.toUpperCase() > b.name.last.toUpperCase()) ? 1 : -1);
   // return accounts.sort((a, b) => {
   //   const nameA = a.name.last.toUpperCase();
   //   // console.log(nameA);
