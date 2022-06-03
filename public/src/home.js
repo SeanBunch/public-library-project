@@ -36,7 +36,13 @@ function getBooksBorrowedCount(books) {
 // console.log(getBooksBorrowedCount(books));
 
 
-function getMostCommonGenres(books) { }
+function getMostCommonGenres(books) {
+
+
+};
+console.log(getMostCommonGenres(books));
+
+
 
 function getMostPopularBooks(books) { }
 
