@@ -40,7 +40,7 @@ function getMostCommonGenres(books) {
 
 
 };
-console.log(getMostCommonGenres(books));
+// console.log(getMostCommonGenres(books));
 
 
 
