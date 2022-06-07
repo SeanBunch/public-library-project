@@ -84,21 +84,6 @@ function getMostPopularBooks(books) {
 };
 // console.log(getMostPopularBooks(books));
 
-// function authorBookList(books) {
-//   let listOfCount = {};
-//   books.forEach((book) => {
-//     listOfCount[book.authorId] = book.borrows.length;
-//     // console.log(book.borrows.length);
-//     // console.log(listOfCount);
-//   });
-//   console.log(listOfCount);
-//   return Object.entries(listOfCount).map(([authorId, count]) => {
-//     return { authorId, count };
-//   });
-
-// };
-// console.log(authorBookList(books, authors));
-
 // function getMostPopularAuthors(books, authors) {
 //   let popularAuthor = [];
 //   // let popularAuthor =  {name: ${authors[i].name.first} ${authors[i].name.last}, count: 0};
