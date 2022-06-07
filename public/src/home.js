@@ -99,28 +99,41 @@ function getMostPopularBooks(books) {
 // };
 // console.log(authorBookList(books, authors));
 
+// function getMostPopularAuthors(books, authors) {
+//   let popularAuthor = [];
+//   // let popularAuthor =  {name: ${authors[i].name.first} ${authors[i].name.last}, count: 0};
+//   for (let i = 0; i < authors.length; i++) {
+//     // console.log(authors[i].name.first, authors[i].name.last);
+//     for (let j = 0; j < books.length; j++) {
+//       if (authors[i].id === books[j].authorId) {
+//         popularAuthor.push({ name: `${authors[i].name.first} ${authors[i].name.last}`, count: books[j].borrows.length })
+//         // let count = 0;
+//         // count += books[j].borrows.length
+//         //  console.log(books[j].borrows.length);
+//         // popularAuthor.count += books[j].borrows.length
+//       }
+//       // books[j].borrows.length
+//     }
+//     // console.log(popularAuthor);
+//     console.log(popularAuthor);
+//   };
+// };
+
 function getMostPopularAuthors(books, authors) {
-  let popularAuthor = [];
-  // let popularAuthor =  {name: ${authors[i].name.first} ${authors[i].name.last}, count: 0};
+  let mostPopularAuthors = [];
   for (let i = 0; i < authors.length; i++) {
-    // console.log(authors[i].name.first, authors[i].name.last);
+    const authorId = authors[i].id;
+    let popularAuthor = { name: `${authors[i].name.first} ${authors[i].name.last}`, count: 0 };
     for (let j = 0; j < books.length; j++) {
-      if (authors[i].id === books[j].authorId) {
-        popularAuthor.push({ name: `${authors[i].name.first} ${authors[i].name.last}`, count: books[j].borrows.length })
-        // let count = 0;
-        // count += books[j].borrows.length
-        //  console.log(books[j].borrows.length);
-        // popularAuthor.count += books[j].borrows.length
+      if (authorId === books[j].authorId) {
+        popularAuthor.count += books[j].borrows.length;
+        mostPopularAuthors.push(popularAuthor);
       }
-      // books[j].borrows.length
     }
-    // console.log(popularAuthor);
-    console.log(popularAuthor);
-  };
-};
-
-console.log(getMostPopularAuthors(books, authors));
-
+  }
+  return mostPopularAuthors.sort((a, b) => (b.count - a.count)).slice(0, 5);
+}
+// console.log(getMostPopularAuthors(books, authors));
 
 module.exports = {
   getTotalBooksCount,
