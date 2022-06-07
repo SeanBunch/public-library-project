@@ -36,22 +36,6 @@ function getBooksBorrowedCount(books) {
 // console.log(getBooksBorrowedCount(books));
 // count[book.genre] = (count[book.genre] || 0) + 1;
 
-// function listGenre(books) {
-//   let list = [];
-//   const countObj = books.reduce((count, book) => {
-//     count[book.genre] = (count[book.genre] || 0) + 1;
-//     list.push({ "name": book.genre, "count": (count[book.genre] || 0) + 1 })
-//     //  {"name": book.genre}, {"count": (count[book.genre] || 0) + 1 };
-//     // console.log( {"name": book.genre, "count": (count[book.genre] || 0) + 1 })
-//     // console.log(list);
-//     // console.log(count)
-//     return count;
-//   }, []);
-//   return countObj;
-//   // return list
-// }
-// console.log(listGenre(books));
-
 function getMostCommonGenres(books) {
   let bookGenres = {};
   books.forEach((book) => {
