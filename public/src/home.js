@@ -70,19 +70,6 @@ function getMostCommonGenres(books) {
 // console.log(getMostCommonGenres(books));
 
 
-
-// function countBooks(books) {
-//   let listOfCount = {};
-//   books.forEach((book) => {
-//     listOfCount["borrowed"] = book.borrows.length;
-//     // console.log(book.borrows.length);
-    
-//     console.log(listOfCount);
-//   });
-//   // console.log(listOfCount);
-// };
-// console.log(countBooks(books));
-
 function getMostPopularBooks(books) {
   let listOfCount = {};
   books.forEach((book) => {
@@ -97,7 +84,43 @@ function getMostPopularBooks(books) {
 };
 // console.log(getMostPopularBooks(books));
 
-function getMostPopularAuthors(books, authors) { }
+// function authorBookList(books) {
+//   let listOfCount = {};
+//   books.forEach((book) => {
+//     listOfCount[book.authorId] = book.borrows.length;
+//     // console.log(book.borrows.length);
+//     // console.log(listOfCount);
+//   });
+//   console.log(listOfCount);
+//   return Object.entries(listOfCount).map(([authorId, count]) => {
+//     return { authorId, count };
+//   });
+
+// };
+// console.log(authorBookList(books, authors));
+
+function getMostPopularAuthors(books, authors) {
+  let popularAuthor = [];
+  // let popularAuthor =  {name: ${authors[i].name.first} ${authors[i].name.last}, count: 0};
+  for (let i = 0; i < authors.length; i++) {
+    // console.log(authors[i].name.first, authors[i].name.last);
+    for (let j = 0; j < books.length; j++) {
+      if (authors[i].id === books[j].authorId) {
+        popularAuthor.push({ name: `${authors[i].name.first} ${authors[i].name.last}`, count: books[j].borrows.length })
+        // let count = 0;
+        // count += books[j].borrows.length
+        //  console.log(books[j].borrows.length);
+        // popularAuthor.count += books[j].borrows.length
+      }
+      // books[j].borrows.length
+    }
+    // console.log(popularAuthor);
+    console.log(popularAuthor);
+  };
+};
+
+console.log(getMostPopularAuthors(books, authors));
+
 
 module.exports = {
   getTotalBooksCount,
